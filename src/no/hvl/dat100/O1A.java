@@ -6,7 +6,8 @@ public class O1A {
 		int[] heltallsTabell = { 1, 23, 4, 6, 8, 12, 45, 13 };
 
 		skrivUt(heltallsTabell);
-
+		String tabellTilStreng = tilstreng(heltallsTabell);
+		System.out.println(tabellTilStreng);
 	}
 
 	// a)
@@ -24,4 +25,18 @@ public class O1A {
 
 	}
 
+	
+	// b) 
+	
+	public static String tilstreng(int[] tabell) {
+		
+		String nyStreng = "[";
+		for(int i =0;i<tabell.length-1;i++) {
+			nyStreng = nyStreng + tabell[i] + ",";
+		}
+		nyStreng = nyStreng + tabell[tabell.length-1];
+		nyStreng = nyStreng + "]";
+		
+		return nyStreng;
+	}
 }
