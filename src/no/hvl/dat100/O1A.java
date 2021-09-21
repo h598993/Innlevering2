@@ -76,4 +76,9 @@ public class O1A {
 		}
 		return sum;
 	}
+
+public static void test() {
+	
+	
+}
 }
