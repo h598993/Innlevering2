@@ -4,6 +4,7 @@ public class O1A {
 
 	public static void main(String[] args) {
 		int[] heltallsTabell = { 1, 23, 4, 6, 8, 12, 45, 13 };
+		boolean finnestall = finnesTall(heltallsTabell, 12);
 
 		skrivUt(heltallsTabell);
 		String tabellTilStreng = tilstreng(heltallsTabell);
@@ -12,6 +13,8 @@ public class O1A {
 		System.out.println(summerForLøkke(heltallsTabell));
 		System.out.println(summerWhileLøkke(heltallsTabell));
 		System.out.println(summerForEach(heltallsTabell));
+		System.out.println(finnestall);
+		System.out.println(posisjonTall(heltallsTabell, 14));
 	}
 
 	// a)
@@ -30,7 +33,6 @@ public class O1A {
 	}
 
 	// b)
-
 	public static String tilstreng(int[] tabell) {
 
 		String nyStreng = "[";
@@ -43,8 +45,7 @@ public class O1A {
 		return nyStreng;
 	}
 
-	// c
-
+	// c)
 	public static int summerForLøkke(int[] tabell) {
 
 		int sum = 0;
@@ -76,9 +77,33 @@ public class O1A {
 		}
 		return sum;
 	}
+	
+	// d)
+	public static boolean finnesTall(int[] tabell, int tall) {
 
-public static void test() {
+		boolean funnet = false;
+		int i = 0;
+		while (!funnet && i < tabell.length) {
+			if (tabell[i] == tall) {
+				funnet = true;
+			}
+			i++;
+		}
+
+		return funnet;
+	}
 	
-	
-}
+	// e)
+	public static int posisjonTall(int[] tabell, int tall) {
+		int returVerdi = -1;
+		
+		for(int i=0; i < tabell.length;i++) {
+			if (tabell[i] == tall) {
+				returVerdi = i;
+				break;
+			}
+		}
+		return returVerdi;
+		
+	}
 }
