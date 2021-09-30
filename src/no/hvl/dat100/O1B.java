@@ -4,11 +4,13 @@ public class O1B {
 
 	public static void main(String[] args) {
 		int[][] test = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int[][] test2 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int[][] test3 = { { 7, 8, 10 }, { 6, 7, 8, 10 }, { 7, 8, 10 } };
 
 		skrivUt1(test);
 		System.out.println(tilStreng(test));
 		skrivUt1(skaler(10, test));
-
+		System.out.println(erLik(test, test2));
 	}
 // a)
 
@@ -57,4 +59,25 @@ public class O1B {
 		return nyMatrise;
 	}
 
+	// d)
+
+	public static boolean erLik(int[][] mat1, int[][] mat2) {
+		boolean erLik = true;
+		// sjekker om lengden er lik først
+		if (mat1.length == mat2.length) {
+
+			for (int r = 0; r < mat1.length; r++) {
+
+				for (int k = 0; k < mat1[r].length; k++) {
+					if (mat1[r][k] != mat2[r][k]) {
+						erLik = false;
+						return erLik;
+					}
+				}
+			}
+		} else {
+			erLik = false;
+		}
+		return erLik;
+	}
 }
