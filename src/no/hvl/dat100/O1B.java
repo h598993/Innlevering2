@@ -7,6 +7,7 @@ public class O1B {
 
 		skrivUt1(test);
 		System.out.println(tilStreng(test));
+		skrivUt1(skaler(10, test));
 
 	}
 // a)
@@ -36,9 +37,24 @@ public class O1B {
 		}
 		return returStreng;
 	}
-	
+
 	// c)
-	
-	
+
+	public static int[][] skaler(int tall, int[][] matrise) {
+
+		int[][] nyMatrise = new int[matrise.length][];
+
+		for (int rad = 0; rad < matrise.length; rad++) {
+
+			// legger til lengden på raden slik at den blir dynamisk
+			nyMatrise[rad] = new int[matrise[rad].length];
+
+			for (int element = 0; element < matrise[rad].length; element++) {
+				nyMatrise[rad][element] = matrise[rad][element] * tall;
+			}
+		}
+
+		return nyMatrise;
+	}
 
 }
