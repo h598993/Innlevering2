@@ -11,6 +11,8 @@ public class O1B {
 		System.out.println(tilStreng(test));
 		skrivUt1(skaler(10, test));
 		System.out.println(erLik(test, test2));
+		
+		skrivUt1(speile(test));
 	}
 // a)
 
@@ -79,5 +81,26 @@ public class O1B {
 			erLik = false;
 		}
 		return erLik;
+	}
+
+	// e)
+
+	public static int[][] speile(int[][] matrise) {
+		int[][] nyMatrise = new int[matrise.length][matrise.length];
+
+		for (int r = 0; r < matrise.length; r++) {
+			for(int k = 0; k< matrise[r].length; k++) {
+				nyMatrise[r][k] = matrise[r][k];
+			}
+		}
+		
+		for(int r = 0; r<nyMatrise.length;r++) {
+			for ( int k = 0; k < nyMatrise.length; k++) {
+				nyMatrise[(matrise.length-1)-k][r] = matrise[r][k];
+			}
+		}
+		
+
+			return nyMatrise;
 	}
 }
